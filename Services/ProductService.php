@@ -19,8 +19,17 @@ class ProductService
 
     public function getProductsByTenantUuid(string $uuid, array $categories)
     {
+
+        /**
+        * Pegando o resturante pelo token
+        *
+        */
         $tenant = $this->tenantRepository->getTenantByUuid($uuid);
 
+        /**
+        * Pegando os produtos
+        *
+        */
         return $this->productRepository->getproductsByTenantId($tenant->id, $categories);
     }
 

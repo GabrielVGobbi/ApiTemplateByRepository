@@ -22,6 +22,11 @@ class ProductApiController extends Controller
     */
     public function productsByTenant(Request $request)
     {
+
+        /**
+        * A Controller chama o serviço relacionado a Produto
+        *
+        */
         $products = $this->productService->getProductsByTenantUuid(
             $request->token_company,
             $request->get('categories', [])

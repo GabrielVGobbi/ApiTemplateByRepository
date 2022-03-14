@@ -15,6 +15,11 @@ class ProductRepository
 
     public function getproductsByTenantId(int $idTenant, array $categories)
     {
+
+        /**
+        * Query com os produtos
+        *
+        */
         return DB::table($this->table)
                     ->join('category_product', 'category_product.product_id', '=', 'products.id')
                     ->join('categories', 'category_product.category_id', '=', 'categories.id')
